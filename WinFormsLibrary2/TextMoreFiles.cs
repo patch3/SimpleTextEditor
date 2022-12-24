@@ -43,10 +43,8 @@ namespace LibraryLab13 {
         public int IndexOfFile(string name) {
             int index = 1;
             for (int d = 0; d < this.TextFilesList.Count; ++d) {
-#pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
-                if (TextFilesList[d].FStream.Name == name)
+                if (Path.GetFileName(TextFilesList[d].FilePath) == name)
                     index = d;
-#pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
                 ++d;
             }
             return index;

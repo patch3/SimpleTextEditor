@@ -44,11 +44,11 @@
             this.обАвтореToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.создатьToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.открытьToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.печатьToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -118,7 +118,7 @@
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
             this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
-            this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.SaveFileClick);
+            this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.FileSaveAsClick);
             // 
             // печатьИВыводToolStripMenuItem
             // 
@@ -216,11 +216,11 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьToolStripButton,
+            this.ToolStripButton,
             this.открытьToolStripButton,
             this.toolStripButton3,
-            this.сохранитьToolStripButton,
             this.toolStripButton1,
+            this.сохранитьToolStripButton,
             this.печатьToolStripButton,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -231,15 +231,15 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // создатьToolStripButton
+            // ToolStripButton
             // 
-            this.создатьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.создатьToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("создатьToolStripButton.Image")));
-            this.создатьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.создатьToolStripButton.Name = "создатьToolStripButton";
-            this.создатьToolStripButton.Size = new System.Drawing.Size(54, 54);
-            this.создатьToolStripButton.Text = "&Создать";
-            this.создатьToolStripButton.Click += new System.EventHandler(this.FileOpenClick);
+            this.ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripButton.Image")));
+            this.ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripButton.Name = "ToolStripButton";
+            this.ToolStripButton.Size = new System.Drawing.Size(54, 54);
+            this.ToolStripButton.Text = "&Открыть";
+            this.ToolStripButton.Click += new System.EventHandler(this.FileOpenClick);
             // 
             // открытьToolStripButton
             // 
@@ -259,15 +259,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(54, 54);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
-            // сохранитьToolStripButton
-            // 
-            this.сохранитьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.сохранитьToolStripButton.Image = global::WinFormsApp1.Properties.Resources.diskette_save_saveas_1514;
-            this.сохранитьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.сохранитьToolStripButton.Name = "сохранитьToolStripButton";
-            this.сохранитьToolStripButton.Size = new System.Drawing.Size(54, 54);
-            this.сохранитьToolStripButton.Text = "&Сохранить";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -278,6 +269,16 @@
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.FileSaveClick);
             // 
+            // сохранитьToolStripButton
+            // 
+            this.сохранитьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.сохранитьToolStripButton.Image = global::WinFormsApp1.Properties.Resources.diskette_save_saveas_1514;
+            this.сохранитьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.сохранитьToolStripButton.Name = "сохранитьToolStripButton";
+            this.сохранитьToolStripButton.Size = new System.Drawing.Size(54, 54);
+            this.сохранитьToolStripButton.Text = "&Сохранить";
+            this.сохранитьToolStripButton.Click += new System.EventHandler(this.FileSaveAsClick);
+            // 
             // печатьToolStripButton
             // 
             this.печатьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -286,6 +287,7 @@
             this.печатьToolStripButton.Name = "печатьToolStripButton";
             this.печатьToolStripButton.Size = new System.Drawing.Size(54, 54);
             this.печатьToolStripButton.Text = "&Печать";
+            this.печатьToolStripButton.Click += new System.EventHandler(this.PrintPageClick);
             // 
             // toolStripButton2
             // 
@@ -389,7 +391,7 @@
         private ToolStripMenuItem поискToolStripMenuItem;
         private ToolStripMenuItem справкаToolStripMenuItem;
         private ToolStrip toolStrip1;
-        private ToolStripButton создатьToolStripButton;
+        private ToolStripButton ToolStripButton;
         private ToolStripButton открытьToolStripButton;
         private ToolStripButton печатьToolStripButton;
         private ToolStripButton сохранитьToolStripButton;

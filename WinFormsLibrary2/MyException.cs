@@ -9,6 +9,7 @@ namespace LibraryLab13 {
         public const string ERROR_GETTING_VALUE = "Ошибка получения значения";
         public const string ERROR_FILE_OPEN = "Ошибка открытие файла";
         public const string ERROR_NOT_TYPE = "Это не обьект класса \"TextFile\"";
+        public const string ERROR_PRINT_TEXT = "Не возможно распичатать текст";
     
     }
 }

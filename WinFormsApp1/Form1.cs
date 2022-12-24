@@ -1,56 +1,98 @@
 using LibraryLab13;
-using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
 
         protected TextFile? OpenTextFile;
+        private bool _saveFile = false;
 
-        public bool SaveFile = false;
-
-#pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         public Form1() {
             OpenTextFile = null;
             InitializeComponent();
         }
-#pragma warning restore CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
-
+        
         private void FileOpenClick(object sender, EventArgs e) {
-            OpenTextFile?.Close();
             State.Text = "Состояние: открытие файла";
             openFileDialog1.Filter = "Текстовый файл(*.txt)|*.txt|Файл rtf(*.rtf)|*.rtf|Все файлы(*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel) {
                 return;
             }
-
+            
             richTextBox1.Clear();
             OpenTextFile = new TextFile(openFileDialog1.FileName);
             //OpenTextFile.FileRead();
             richTextBox1.AppendText(OpenTextFile.Text);
- 
+
+            Debug.WriteLine(OpenTextFile.WordCount());
+
             NumWords.Text = "Число слов " + OpenTextFile.WordCount();
             NumChar.Text = "Число знаков: " + richTextBox1.TextLength;
             NumStrings.Text = "Строк: " + richTextBox1.Lines.Length;
         }
 
         private void FileSaveClick(object sender, EventArgs e) {
-            if (OpenTextFile == null) {
-                return;
-            }
-            OpenTextFile.Text = richTextBox1.Text;
+            if (OpenTextFile == null)
+                ErrorOutput("Файл не открыт.\n" +
+                    "откройте файл чтобы сохранить его\n" +
+                    "или сохраните файл через функцию \"Сохранить как\"");
+
 
             State.Text = "Состояние: сохранение файла";
 
-            OpenTextFile.FileSave();
+            if (!File.Exists(OpenTextFile.FilePath)) {
+                saveFileDialog1.Filter = "Текстовый файл(*.txt)|*.txt|Файл rtf(*.rtf)|*.rtf|Все файлы(*.*)|*.*";
+                saveFileDialog1.Title = "Сохранить";
 
-            SaveFile = true;
+                OpenTextFile = new TextFile(saveFileDialog1.FileName);
+            }
+            OpenTextFile.Text = richTextBox1.Text;
+            OpenTextFile.FileSave();
+            _saveFile = true;
         }
 
-        private void SaveFileClick(object sender, EventArgs e) {
-            if (OpenTextFile == null) {
+        private void FileSaveAsClick(object sender, EventArgs e) {
+            /*if (OpenTextFile == null) {
+                ErrorOutput("Файл не открыт.\n" +
+                    "откройте файл чтобы сохранить его");
+            }*/
+            //OpenTextFile.Text = richTextBox1.Text;
+            State.Text = "Состояние: сохранение файла";
+            saveFileDialog1.Filter = "Текстовый файл(*.txt)|*.txt|Файл rtf(*.rtf)|*.rtf|Все файлы(*.*)|*.*";
+            saveFileDialog1.Title = "Сохранить как..";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel) {
                 return;
             }
 
+            TextFile OpenTextFile2 = new (saveFileDialog1.FileName);
+            OpenTextFile2.Text = richTextBox1.Text;
+            OpenTextFile2.FileSave();
+
+            _saveFile = true;
         }
+
+        private void PrintPageClick(object sender, EventArgs e) {
+            if (OpenTextFile == null) {
+                ErrorOutput("Файл не открыт");
+            }
+            try {
+                OpenTextFile.PrintPage();
+            } catch(Exception ex) {
+                ErrorOutput(ex.Message);
+            }
+        }
+
+        private void ErrorOutput(string text) {
+            MessageBox.Show(
+                text,
+                "Ты чего наделал?",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Stop,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly
+            );
+        }
+
     }
 }
