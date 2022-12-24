@@ -11,14 +11,13 @@ namespace WinFormsApp1 {
             OpenTextFile = null;
             InitializeComponent();
         }
-        
+
         private void FileOpenClick(object sender, EventArgs e) {
             State.Text = "Состояние: открытие файла";
             openFileDialog1.Filter = "Текстовый файл(*.txt)|*.txt|Файл rtf(*.rtf)|*.rtf|Все файлы(*.*)|*.*";
-            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) {
-                return;
-            }
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return;
             
+
             richTextBox1.Clear();
             OpenTextFile = new TextFile(openFileDialog1.FileName);
             //OpenTextFile.FileRead();
@@ -32,11 +31,14 @@ namespace WinFormsApp1 {
         }
 
         private void FileSaveClick(object sender, EventArgs e) {
-            if (OpenTextFile == null)
-                ErrorOutput("Файл не открыт.\n" +
+            if (OpenTextFile == null) {
+                ErrorOutput(
+                    "Файл не открыт.\n" +
                     "откройте файл чтобы сохранить его\n" +
-                    "или сохраните файл через функцию \"Сохранить как\"");
-
+                    "или сохраните файл через функцию \"Сохранить как\""
+                );
+                return;
+            }
 
             State.Text = "Состояние: сохранение файла";
 
@@ -61,11 +63,10 @@ namespace WinFormsApp1 {
             saveFileDialog1.Filter = "Текстовый файл(*.txt)|*.txt|Файл rtf(*.rtf)|*.rtf|Все файлы(*.*)|*.*";
             saveFileDialog1.Title = "Сохранить как..";
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel) {
-                return;
-            }
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel) return;
+            
 
-            TextFile OpenTextFile2 = new (saveFileDialog1.FileName);
+            TextFile OpenTextFile2 = new(saveFileDialog1.FileName);
             OpenTextFile2.Text = richTextBox1.Text;
             OpenTextFile2.FileSave();
 
@@ -75,11 +76,21 @@ namespace WinFormsApp1 {
         private void PrintPageClick(object sender, EventArgs e) {
             if (OpenTextFile == null) {
                 ErrorOutput("Файл не открыт");
+                return;
             }
+            if (string.IsNullOrEmpty(OpenTextFile.Text)) {
+                ErrorOutput("Файл пустой");
+                return;
+            }
+
+            State.Text = "Состояние: Распечатка файла";
+
             try {
                 OpenTextFile.PrintPage();
-            } catch(Exception ex) {
+                State.Text = "Состояние: конец печати";
+            } catch (Exception ex) {
                 ErrorOutput(ex.Message);
+                State.Text = "Состояние: Печать сорвана";
             }
         }
 
@@ -94,5 +105,13 @@ namespace WinFormsApp1 {
             );
         }
 
+        private void SearchFilesTheDirectoryClick(object sender, EventArgs e) {
+            Form2 f2 = new Form2();
+            f2.Owner = this;
+            f2.ShowDialog();
+
+            richTextBox1.Clear();
+
+        }
     }
 }

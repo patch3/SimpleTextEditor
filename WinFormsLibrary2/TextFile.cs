@@ -164,16 +164,16 @@ namespace LibraryLab13 {
         public static bool operator >=(TextFile? left, TextFile? right) {
             return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : ((IComparable)left).CompareTo(right) >= 0;
         }
-        
-        class FilePathComparer : IComparer<TextFile> {
+
+        public class FilePathComparer : IComparer<TextFile> {
             public int Compare(TextFile? x, TextFile? y) =>
                 String.Compare(x?.FilePath, y?.FilePath);
         }
-        class FileLengthComparer : IComparer<TextFile?> {
+        public class FileLengthComparer : IComparer<TextFile?> {
              int IComparer<TextFile?>.Compare(TextFile? x, TextFile? y) => 
                 x?._text.Length.CompareTo(y?._text.Length) ?? 0;
         }
-        class FileCountWordComparer : IComparer<TextFile?> {
+        public class FileCountWordComparer : IComparer<TextFile?> {
             int IComparer<TextFile?>.Compare(TextFile? x, TextFile? y) => 
                 x?.WordCount().CompareTo(y?.WordCount()) ?? 0;
         }

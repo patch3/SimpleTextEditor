@@ -2,7 +2,7 @@
 
 
 namespace LibraryLab13 {
-    class TextMoreFiles : IEnumerable<TextFile> {
+    public class TextMoreFiles : IEnumerable<TextFile> {
 
         protected List<TextFile> TextFilesList;
         public uint Count { get; protected set; }
@@ -20,7 +20,7 @@ namespace LibraryLab13 {
             }
         }
 
-        protected void Add(TextFile TextFile) {
+        public void Add(TextFile TextFile) {
             TextFilesList.Add(TextFile);
             ++Count;
         }
@@ -64,7 +64,15 @@ namespace LibraryLab13 {
             return HashCode.Combine(TextFilesList);
         }
 
-        
+        public void SortByPath() {
+            TextFilesList.Sort(new TextFile.FilePathComparer());
+        }
+        public void SortByLength() {
+            TextFilesList.Sort(new TextFile.FileLengthComparer());
+        }
+        public void SortByCountWord() {
+            TextFilesList.Sort(new TextFile.FileCountWordComparer());
+        }
 
     }
 }

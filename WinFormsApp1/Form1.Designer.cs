@@ -183,6 +183,7 @@
             this.поискФайловВКатологеToolStripMenuItem.Name = "поискФайловВКатологеToolStripMenuItem";
             this.поискФайловВКатологеToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.поискФайловВКатологеToolStripMenuItem.Text = "Поиск файлов в катологе";
+            this.поискФайловВКатологеToolStripMenuItem.Click += new System.EventHandler(this.SearchFilesTheDirectoryClick);
             // 
             // количествоСловToolStripMenuItem
             // 
