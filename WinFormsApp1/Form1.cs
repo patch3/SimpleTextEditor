@@ -1,5 +1,7 @@
 using LibraryLab13;
 using System.Diagnostics;
+using System.Xml.Serialization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
@@ -152,5 +154,25 @@ namespace WinFormsApp1 {
         private void toolStripButton3_Click(object sender, EventArgs e) {
             richTextBox1.Clear();
         }
+
+        private void вариантToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (OpenTextFile == null) {
+                ErrorOutput("Файл не открыт");
+                return;
+            }
+            /*InfoShow("Слова с ");*/
+        }
+
+        private void InfoShow( string title, string text) {
+            MessageBox.Show(
+                text,
+                title,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly
+            );
+        }
+
     }
 }
