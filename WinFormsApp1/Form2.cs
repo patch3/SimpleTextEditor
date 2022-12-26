@@ -51,7 +51,11 @@ namespace WinFormsApp1 {
 
 
         private void OpenFileClick(object sender, EventArgs e) {
-            DataBuf = _path + listBox1.SelectedItem.ToString();
+            if (listBox1.SelectedItem == null) {
+                WalkDirectory("Файл не выьран");
+                return;
+            }
+            DataBuf = listBox1.SelectedItem.ToString();
             this.Close();
         }
 
