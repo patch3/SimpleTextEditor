@@ -97,41 +97,41 @@
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.FileOpenClick);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.FileSaveClick);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.FileSaveAsClick);
             // 
             // печатьИВыводToolStripMenuItem
             // 
             this.печатьИВыводToolStripMenuItem.Name = "печатьИВыводToolStripMenuItem";
-            this.печатьИВыводToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.печатьИВыводToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.печатьИВыводToolStripMenuItem.Text = "Печать";
             this.печатьИВыводToolStripMenuItem.Click += new System.EventHandler(this.PrintPageClick);
             // 
             // выводToolStripMenuItem
             // 
             this.выводToolStripMenuItem.Name = "выводToolStripMenuItem";
-            this.выводToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выводToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.выводToolStripMenuItem.Text = "Вывод";
             // 
             // параметрыToolStripMenuItem
@@ -175,6 +175,7 @@
             this.вариантToolStripMenuItem.Name = "вариантToolStripMenuItem";
             this.вариантToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.вариантToolStripMenuItem.Text = "Вариант";
+            this.вариантToolStripMenuItem.Click += new System.EventHandler(this.вариантToolStripMenuItem_Click);
             // 
             // сравнениеФайловToolStripMenuItem
             // 
@@ -208,13 +209,13 @@
             // обАвтореToolStripMenuItem
             // 
             this.обАвтореToolStripMenuItem.Name = "обАвтореToolStripMenuItem";
-            this.обАвтореToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обАвтореToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.обАвтореToolStripMenuItem.Text = "Об авторе";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
