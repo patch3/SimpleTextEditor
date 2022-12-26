@@ -144,5 +144,13 @@ namespace WinFormsApp1 {
             Form3 form3 = new();
             form3.Show();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e) {
+            richTextBox1.Clear();
+        }
     }
 }
