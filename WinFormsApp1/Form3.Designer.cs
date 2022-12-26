@@ -37,7 +37,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WinFormsApp1.Properties.Resources.pngwing_com_2_;
-            this.pictureBox1.Location = new System.Drawing.Point(-43, -42);
+            this.pictureBox1.Location = new System.Drawing.Point(-68, -53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(480, 552);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -59,45 +59,44 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 31);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(461, 48);
+            this.label1.Location = new System.Drawing.Point(323, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(254, 35);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "Название программы: программа для работы с текстовыми файлами";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(461, 94);
+            this.label2.Location = new System.Drawing.Point(323, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Версия: 1.0.0.0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(461, 133);
+            this.label3.Location = new System.Drawing.Point(323, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(98, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Copyright@ 2023";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 167);
+            this.label4.Location = new System.Drawing.Point(323, 160);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(182, 15);
             this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.label4.Text = "Название организации: СПБ ПУ";
             // 
             // Form3
             // 
@@ -112,7 +111,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Справка о программе";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -255,7 +255,7 @@
             this.открытьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.открытьToolStripButton.Name = "открытьToolStripButton";
             this.открытьToolStripButton.Size = new System.Drawing.Size(54, 54);
-            this.открытьToolStripButton.Text = "&Открыть";
+            this.открытьToolStripButton.Text = "&Просмотр директории";
             this.открытьToolStripButton.Click += new System.EventHandler(this.SearchFilesTheDirectoryClick);
             // 
             // toolStripButton3
@@ -266,6 +266,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(54, 54);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.ToolTipText = "Очистить";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton1
@@ -275,7 +276,7 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(54, 54);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Text = "Сохранить";
             this.toolStripButton1.Click += new System.EventHandler(this.FileSaveClick);
             // 
             // сохранитьToolStripButton
@@ -285,7 +286,7 @@
             this.сохранитьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.сохранитьToolStripButton.Name = "сохранитьToolStripButton";
             this.сохранитьToolStripButton.Size = new System.Drawing.Size(54, 54);
-            this.сохранитьToolStripButton.Text = "&Сохранить";
+            this.сохранитьToolStripButton.Text = "Сохранить как";
             this.сохранитьToolStripButton.Click += new System.EventHandler(this.FileSaveAsClick);
             // 
             // печатьToolStripButton
@@ -306,6 +307,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(54, 54);
             this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.ToolTipText = "Выйти";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // richTextBox1
@@ -381,7 +383,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Текстовый редактор";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
