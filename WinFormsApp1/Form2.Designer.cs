@@ -32,7 +32,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
@@ -115,8 +114,9 @@
             // comboBox1
             // 
             this.comboBox1.DisplayMember = "Имени";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new string[] {
+            this.comboBox1.Items.AddRange(new object[] {
             "Имени",
             "Размеру",
             "Количеству слов"});
@@ -125,18 +125,10 @@
             this.comboBox1.Size = new System.Drawing.Size(135, 23);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.Tag = "Имени";
-            this.comboBox1.ValueMember = "Имени";
+            this.comboBox1.ValueMember = "0";
             this.comboBox1.SelectedIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(440, 354);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 51);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            
             // 
             // openFileDialog1
             // 
@@ -147,7 +139,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 458);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
@@ -175,7 +166,6 @@
         private Button button3;
         private Label label4;
         private ComboBox comboBox1;
-        private Button button4;
         private FolderBrowserDialog folderBrowserDialog1;
         private OpenFileDialog openFileDialog1;
     }

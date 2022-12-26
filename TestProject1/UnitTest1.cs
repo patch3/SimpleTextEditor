@@ -17,8 +17,8 @@ namespace TestProject1 {
 
         [TestMethod]
         public void TestMethod2() {
-            TextFile file1 = new TextFile("1.txt") { Text = "Здравствуй" };
-            TextFile file2 = new TextFile("2.txt") { Text = "Ничего пока" };
+            TextFile file1 = new TextFile("11.txt") { Text = "Здравствуй" };
+            TextFile file2 = new TextFile("21.txt") { Text = "Ничего пока" };
             file1.FileSave();
             file2.FileSave();
             bool actual = (file1 != file2);
@@ -43,11 +43,5 @@ namespace TestProject1 {
             int expected = 4;
             Assert.AreEqual(file.WordCount(), expected);
         }
-
-
     }
-   
-
-
-
 }

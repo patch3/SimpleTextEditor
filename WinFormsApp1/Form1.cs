@@ -110,6 +110,9 @@ namespace WinFormsApp1 {
                 Owner = this
             };
             form2.ShowDialog();
+            if (string.IsNullOrEmpty(form2.DataBuf)) {
+                return;
+            }
 
             richTextBox1.Clear();
             OpenTextFile = new TextFile(form2.DataBuf);

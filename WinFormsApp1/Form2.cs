@@ -1,6 +1,4 @@
 ﻿using LibraryLab13;
-using System.IO;
-using static System.Net.WebRequestMethods;
 
 namespace WinFormsApp1 {
     public partial class Form2 : Form {
@@ -57,13 +55,7 @@ namespace WinFormsApp1 {
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e) {
-            listBox1.Items.Clear();
-            SortKistFile();
-            foreach (TextFile file in _filesList) {
-                listBox1.Items.Add(file.FilePath);
-            }
-        }
+
         /// <summary>
         /// Сортировка по выбраному режиму
         /// </summary>
@@ -79,6 +71,11 @@ namespace WinFormsApp1 {
                     _filesList.SortByCountWord();
                     break;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            if (listBox1.Items.Count <= 0) return;
+            SortKistFile();
         }
     }
 }
