@@ -70,7 +70,7 @@ namespace LibraryLab13 {
             e.Graphics.DrawString(Text, font, Brushes.Black, x, y);
         }
 
-
+        
         public void FileRead() {
             using StreamReader reader = new(FilePath);
             _text = reader.ReadToEnd();
@@ -91,7 +91,11 @@ namespace LibraryLab13 {
                 Console.WriteLine("Произошла ошибка при сохранении файла: " + ex.Message);
             }
         }
-
+        
+        /// <summary>
+        /// подчет количества слов
+        /// </summary>
+        /// <returns></returns>
         public int WordCount()=>
             _text.Split(
                 WORD_SEPARATORS,
@@ -102,6 +106,12 @@ namespace LibraryLab13 {
 
         public static readonly char[] WORD_SEPARATORS_NO_DOT = WORD_SEPARATORS.Skip(1).ToArray();
 
+
+        /// <summary>
+        /// получения списка слов закнчивающиеся на заданные символы находящиеся в конце предложений
+        /// </summary>
+        /// <param name="syllable"></param>
+        /// <returns></returns>
         public List<string> WordsEndingWithSyllable(string syllable) {
             // Разбиваем текст на предложения, разделителем служит точка
             string[] sentences = Text.Split('.');
@@ -138,6 +148,13 @@ namespace LibraryLab13 {
 #pragma warning restore CS8767 // Допустимость значений NULL для ссылочных типов в типе параметра не соответствует неявно реализованному элементу (возможно, из-за атрибутов допустимости значений NULL).
 
         public override int GetHashCode() => _text.GetHashCode();
+
+        /// <summary>
+        /// операторы сравнения
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
 
         public static bool operator ==(TextFile? left, TextFile? right) {
             if (ReferenceEquals(left, null)) {
