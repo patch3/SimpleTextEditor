@@ -1,8 +1,4 @@
-﻿
-
-using System.Collections.Specialized;
-
-namespace LibraryLab13 {
+﻿namespace LibraryLab13 {
     public class MyException {
         public const string ERROR_FILE_READ = "Ошибка чтения файла";
         public const string ERROR_FILE_WRITE = "Ошибка записи файла";

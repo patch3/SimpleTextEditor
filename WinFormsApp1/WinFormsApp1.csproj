@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="WinFormsLibrary2">
-      <HintPath>..\WinFormsLibrary2\bin\Debug\net6.0-windows\WinFormsLibrary2.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\WinFormsLibrary2\WinFormsLibrary2.csproj" />
   </ItemGroup>
 
   <ItemGroup>
