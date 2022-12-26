@@ -34,7 +34,6 @@ namespace LibraryLab13 {
                 --Count;
             }
         }
-
         public override bool Equals(object? obj) {
             return obj is TextMoreFiles files &&
                    EqualityComparer<List<TextFile>>.Default.Equals(TextFilesList, files.TextFilesList);

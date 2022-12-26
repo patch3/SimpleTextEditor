@@ -7,8 +7,6 @@ namespace WinFormsApp1 {
 
         public string DataBuf = string.Empty;
 
-        private FolderBrowserDialog _newPath;
-
         private TextMoreFiles _filesList;
 
         public string _path;
@@ -23,7 +21,7 @@ namespace WinFormsApp1 {
         }
 
         private void NewCatalogClick(object sender, EventArgs e) {
-            _newPath = new FolderBrowserDialog();
+            FolderBrowserDialog _newPath = new FolderBrowserDialog();
             if (_newPath.ShowDialog() == DialogResult.Cancel) return;
 
             _path = _newPath.SelectedPath;
@@ -77,7 +75,7 @@ namespace WinFormsApp1 {
                 case "Размеру":
                     _filesList.SortByLength();
                     break;
-                case "количеству слов":
+                case "Количеству слов":
                     _filesList.SortByCountWord();
                     break;
             }

@@ -59,6 +59,7 @@
             this.State = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -147,12 +148,14 @@
             this.шрифтToolStripMenuItem.Name = "шрифтToolStripMenuItem";
             this.шрифтToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.шрифтToolStripMenuItem.Text = "Шрифт";
+            this.шрифтToolStripMenuItem.Click += new System.EventHandler(this.шрифтToolStripMenuItem_Click);
             // 
             // показатьСкрытьToolStripMenuItem
             // 
             this.показатьСкрытьToolStripMenuItem.Name = "показатьСкрытьToolStripMenuItem";
             this.показатьСкрытьToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.показатьСкрытьToolStripMenuItem.Text = "Показать/Скрыть";
+            this.показатьСкрытьToolStripMenuItem.Click += new System.EventHandler(this.показатьСкрытьToolStripMenuItem_Click);
             // 
             // поискToolStripMenuItem
             // 
@@ -204,14 +207,15 @@
             // обАвтореToolStripMenuItem
             // 
             this.обАвтореToolStripMenuItem.Name = "обАвтореToolStripMenuItem";
-            this.обАвтореToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.обАвтореToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.обАвтореToolStripMenuItem.Text = "Об авторе";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -421,5 +425,6 @@
         private OpenFileDialog openFileDialog1;
         private ToolStripButton toolStripButton3;
         private SaveFileDialog saveFileDialog1;
+        private ColorDialog colorDialog1;
     }
 }

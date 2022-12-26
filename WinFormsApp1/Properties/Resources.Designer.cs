@@ -93,6 +93,16 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com_2_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing_com_2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_file_disk_open_searsh_loading_clipboard_1513 {
             get {
                 object obj = ResourceManager.GetObject("save_file_disk_open_searsh_loading_clipboard_1513", resourceCulture);

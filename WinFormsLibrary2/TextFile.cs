@@ -25,6 +25,7 @@ namespace LibraryLab13 {
 #pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
         public TextFile(string path) {
             FilePath = path;
+            if (!File.Exists(FilePath)) File.Create(FilePath).Close(); // если файла нету, то создать его
             FileRead();
             printDocument = new PrintDocument();
             printDocument.DocumentName = FilePath;
@@ -122,7 +123,7 @@ namespace LibraryLab13 {
             return foundWords;
         }
         public override bool Equals(object? obj) {
-            return obj is TextFile file &&  int.Equals(_text.Length, file._text.Length);
+            return obj is TextFile file && int.Equals(_text.Length, file._text.Length);
             
         }
 
@@ -146,6 +147,9 @@ namespace LibraryLab13 {
         }
 
         public static bool operator !=(TextFile? left, TextFile? right) {
+            if (ReferenceEquals(left, null)) {
+                return ReferenceEquals(right, null);
+            }
             return !(left == right);
         }
 

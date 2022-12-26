@@ -127,6 +127,9 @@
   <data name="emblemunreadable_93487" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emblemunreadable_93487.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngwing_com_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="save_file_disk_open_searsh_loading_clipboard_1513" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_file_disk_open_searsh_loading_clipboard_1513.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -106,12 +106,40 @@ namespace WinFormsApp1 {
         }
 
         private void SearchFilesTheDirectoryClick(object sender, EventArgs e) {
-            Form2 f2 = new Form2();
-            f2.Owner = this;
-            f2.ShowDialog();
+            Form2 form2 = new() {
+                Owner = this
+            };
+            form2.ShowDialog();
 
             richTextBox1.Clear();
+            OpenTextFile = new TextFile(form2.DataBuf);
 
+            OpenTextFile.FileRead();
+            richTextBox1.AppendText(OpenTextFile.Text);
+
+            NumWords.Text = "Число слов " + OpenTextFile.WordCount();
+            NumChar.Text = "Число знаков: " + richTextBox1.TextLength;
+            NumStrings.Text = "Строк: " + richTextBox1.Lines.Length;
+        }
+
+        private void показатьСкрытьToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (toolStrip1.Visible) {
+                toolStrip1.Hide();
+            } else {
+                toolStrip1.Show();
+            }
+        }
+
+        private void шрифтToolStripMenuItem_Click(object sender, EventArgs e) {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK) {
+                richTextBox1.ForeColor = colorDialog.Color;
+            }
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e) {
+            Form3 form3 = new();
+            form3.Show();
         }
     }
 }
